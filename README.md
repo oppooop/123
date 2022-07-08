@@ -1,4 +1,24 @@
-	for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+
+
+    local ScreenGui = Instance.new("ScreenGui")
+    local Toggle = Instance.new("TextButton")
+    ScreenGui.Name = "ScreenGui"
+    ScreenGui.Parent = game.CoreGui
+    Toggle.Name = "Toggle"
+    Toggle.Parent = ScreenGui
+    Toggle.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    Toggle.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+    Toggle.Size = UDim2.new(0, 45, 0, 45)
+    Toggle.Font = Enum.Font.GothamSemibold
+    Toggle.Text = "HUB"
+    Toggle.TextColor3 = Color3.fromRGB(255, 0, 0)
+    Toggle.TextScaled = true
+    Toggle.MouseButton1Down:connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+    end)
+
+for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
 		if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "SwordSlash" or v.Name == "Sounds" then
 		v:Destroy() 
 		end
